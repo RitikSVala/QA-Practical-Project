@@ -1,0 +1,19 @@
+---
+- name: Use docker install role
+  hosts: all
+  remote_user: ansible
+  become: true
+  roles:
+  - dockerinstall
+- name: Use swarmmanager role
+  hosts: swarmmanager
+  remote_user: ansible
+  become: true
+  roles:
+  - swarmmanager
+- name: Use swarmworker role
+  hosts: swarmworker
+  remote_user: ansible
+  become: true
+  roles:
+  - swarmworker

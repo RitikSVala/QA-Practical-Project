@@ -1,2 +1,9 @@
 ---
 # tasks file for swarmworker
+
+- name: "Add Worker to the Swarm"
+  docker_swarm:
+    state: join
+    advertise_addr: swarmworker
+    join_token: "{{ hostvars['instance-2']['info']['swarm_facts']['JoinTokens']['Worker'] }}"
+    remote_addrs: [ 'instance-2:2377' ]
