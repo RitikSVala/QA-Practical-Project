@@ -4,8 +4,6 @@ services:
     container_name: front-end
     image: ritikvala/front-end:latest
     build: ./front-end
-    environment:
-      PASSWORD: ${MYSQL_ROOT_PASSWORD}
   name-api:
     container_name: name-api
     image: ritikvala/name-api:latest
