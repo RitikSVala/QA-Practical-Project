@@ -34,11 +34,11 @@
     <script>
     $('#submit_button').on('click', function () {
         debugger
-        $.get("http://localhost:8000/service2", function (data, status) {
+        $.get("http://event_generator_name-api:8000/name-api", function (data, status) {
             var rapper_id = data.id
-            $.post("http://localhost:8000/service3",{"id": rapper_id} ,function (data, status) {
+            $.post("http://event_generator_date-api:8000/date-api",{"id": rapper_id} ,function (data, status) {
               console.log(data.date);
-              $.post("http://localhost:8000/service4",{"id": rapper_id} ,function (data, status) {
+              $.post("http://event_generator_display-api:8000/display-api",{"id": rapper_id} ,function (data, status) {
                     console.log(data.data);
                     $('#result').text(data.data);
               });

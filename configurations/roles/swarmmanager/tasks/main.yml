@@ -1,5 +1,13 @@
 ---
 # tasks file for swarmmanager
+- name: "Copy docker-compose file"
+  copy:
+    src: ../../../docker-compose.yaml
+    dest: /home/jenkins
+- name: "Copy nginx conf file"
+  copy:
+    src: ../../../nginx.conf
+    dest: /home/jenkins
 - name: "Init swarm"
   docker_swarm:
     state: present

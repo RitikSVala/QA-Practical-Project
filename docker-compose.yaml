@@ -1,5 +1,15 @@
 version: "3.8"
 services:
+  nginx:
+    container_name: nginx
+    image: nginx:alpine
+    ports:
+      - target: 80
+        published: 80
+    volumes:
+      - type: bind
+        source: ./nginx.conf
+        target: /etc/nginx/nginx.conf
   front-end:
     container_name: front-end
     image: ritikvala/front-end:latest
