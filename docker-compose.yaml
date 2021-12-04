@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  front-end:
+    container_name: front-end
+    image: ritikvala/front-end:latest
+    build: ./front-end
+    environment:
+      PASSWORD: ${MYSQL_ROOT_PASSWORD}
+  name-api:
+    container_name: name-api
+    image: ritikvala/name-api:latest
+    build: ./name-api
+    deploy:
+      replicas: 3
+  date-api:
+    container_name: date-api
+    image: ritikvala/date-api:latest
+    build: ./date-api
+    deploy:
+      replicas: 3
+  display-api:
+    container_name: display-api
+    image: ritikvala/display-api:latest
+    build: ./display-api
+    deploy:
+      replicas: 3

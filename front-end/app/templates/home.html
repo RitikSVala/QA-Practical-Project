@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1 class="page-header">Rapper World</h1>
+    <table>
+
+        <tr>
+
+            <td>
+                <p style="font-size: large;">If you want to make it in the rap/hip hop world then you're going to need an identity, and that starts with the perfect name.
+                    Become a real Rapper, enter your <b>FULL NAME</b> and hit submit</p>
+            </td>
+
+        </tr>
+
+    </table>
+    <form action="{{ url_for('home') }}" method="POST">
+        <div align="center"><input type="text" name="realname" size=25>&nbsp;
+            <input type="button" value="Enter da Name" name="Submit" required id="submit_button">
+        </div>
+    </form>
+    <br>
+    <br>
+    <center><label id="result"><b><font class=normalText> {{ rappers }}</label></center>
+
+
+    <p align="center">
+
+    </body>
+    </html>
+{% endblock %}
+
+{% block js %}
+    <script>
+    $('#submit_button').on('click', function () {
+        debugger
+        $.get("http://localhost:8000/service2", function (data, status) {
+            var rapper_id = data.id
+            $.post("http://localhost:8000/service3",{"id": rapper_id} ,function (data, status) {
+              console.log(data.date);
+              $.post("http://localhost:8000/service4",{"id": rapper_id} ,function (data, status) {
+                    console.log(data.data);
+                    $('#result').text(data.data);
+              });
+            })
+            return true;
+        });
+        return true;
+    })
+
+    </script>
+{% endblock %}

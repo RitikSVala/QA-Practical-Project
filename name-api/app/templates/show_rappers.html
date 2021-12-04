@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="container">
+  <h1 class="page-header">Show rappers</h1>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="alert alert-success">
+        <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <table>
+   <tr>
+
+<th> Rapper Name </th>
+<th> <span> Date of Birth  </span> </th>
+</tr>
+   
+    {% for rapper in rappers %}
+    <tr>
+    <td>{{ rapper.name }}</td>
+      
+     <td > <span>  {{ rapper.birth_date }} </span> </td>
+     </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}
