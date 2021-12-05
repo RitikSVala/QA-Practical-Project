@@ -2,6 +2,8 @@
 A Flask Application that demonstrates Flask-WTF and Flask-SQLAlchemy using a
 SQLite database testing.
 
+On push testing
+
 ## Instructions
 As always ensure you create a virtual environment for this application and install
 the necessary libraries from the `requirements.txt` file.
