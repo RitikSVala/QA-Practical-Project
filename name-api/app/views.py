@@ -8,10 +8,8 @@ import random
 from flask import request
 
 
-# import sqlite3
-
 ###
-# Routing for your application.
+# Routing for application.
 ###
 
 # Service 2
