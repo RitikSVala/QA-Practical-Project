@@ -1,6 +1,6 @@
 # flask_sqlite
 A Flask Application that demonstrates Flask-WTF and Flask-SQLAlchemy using a
-SQLite database.
+SQLite database testing.
 
 ## Instructions
 As always ensure you create a virtual environment for this application and install
